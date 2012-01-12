@@ -8,7 +8,10 @@ Installation
 <pre>
   # Install dependencies
   bundle
+</pre>
 
-  # Collect 1000 page contents and write word frequencies in a text file
-  ruby crawler 1000 foo.txt
+Usage
+-----
+<pre>
+  ruby crawler.rb URL FILE DEPTH THREAD_COUNT
 </pre>
