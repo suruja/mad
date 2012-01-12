@@ -33,16 +33,18 @@ end
   collect{ |k,v| k}.
   sort
 
-# Open and erase the 2nd-argument-named file (or create it if it does not exist)
 
+@dest.write("url")
 @words.each do |word|
   @dest.write("\t#{word}")
 end
 
+wiki_domain_length = "http://fr.wikipedia.org/wiki/".length
+
 @urls.each do |url|
-  @dest.write("\n#{url}")
+  @dest.write("\n#{url.slice(wiki_domain_length..-1)}")
   @words.each do |word|
-    @dest.write("\t#{@documents[url][word]}")
+    @dest.write("\t#{ @documents[url][word].nil? ? 0 : @documents[url][word]}")
   end
 end
 
